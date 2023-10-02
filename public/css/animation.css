@@ -1,0 +1,15 @@
+/* Animasi fade-in */
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Terapkan animasi pada elemen yang ingin Anda animasikan */
+.slide-right {
+    animation: slideRight 0.5s ease-in-out forwards;
+}
+

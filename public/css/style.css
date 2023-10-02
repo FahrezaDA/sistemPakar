@@ -1,0 +1,156 @@
+
+/* Ubah warna latar belakang navbar sesuai dengan Shopee */
+
+head{
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+background-color: #ffffff;
+background-image: url('img/background.png');
+background-size: cover;
+
+}
+
+#gambarGejala{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+
+}
+
+/* Mengatur gaya dasar untuk daftar ol */
+#listGejala ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+    padding-left: 20px;
+    margin-top: 15px;
+  }
+
+  /* Mengatur gaya untuk setiap item dalam daftar ol */
+  #listGejala li {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    text-align: justify;
+  }
+
+  /* Mengatur warna teks dan latar belakang untuk membedakan item daftar */
+  #listGejala li:nth-child(odd) {
+    background-color: #d9d4d4; /* Warna latar belakang untuk item ganjil */
+  }
+
+  /* Mengatur padding dan margin untuk elemen h1 (judul) */
+  #listGejala h1 {
+    font-size: 24px;
+    margin-top: 0;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  /* Mengatur gaya untuk daftar ol yang diletakkan di dalam elemen h1 */
+  #listGejala h1 ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+#h1Gejala{
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    line-height: 1.4em;
+    font-weight: 800;
+    font-style: oblique;
+    text-align: center  ;
+    margin-top: 17px;
+}
+
+#loginNav{
+background-color: #1bca18;
+}
+.navbar {
+    background-color: #93c5ea;
+    border-bottom: 1px solid #e1e1e1;
+  }
+
+  /* Atur spasi antara elemen-elemen navbar */
+  .navbar-nav {
+    margin-right: auto;
+  }
+
+  /* Atur font dan warna teks pada navbar */
+  .navbar-brand{
+    font-weight: 600;
+    font-style: oblique;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+  }
+  .navbar-brand span{
+    color: #b76b00;
+  }
+
+
+  .nav-link{
+    font-size:12px;
+  }
+
+  .nav-link:hover{
+    text-decoration: underline;
+    background-color: #f8f8f8;
+  }
+
+.content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+}
+
+/* Judul teks dalam .textBox */
+.content .textBox h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    line-height: 1.4em;
+    font-weight: 800;
+    font-style: oblique;
+}
+
+/* Paragraf dalam .textBox */
+.content .textBox p {
+    color: #0f0e0d;
+    font-weight: 500;
+    font-size: 1em; /* Ubah ukuran font ke yang sesuai, 1px tidak akan terlihat */
+}
+
+
+.active{
+    text-decoration: underline;
+    font-weight: 700;
+    text-decoration-thickness: 2px; /* Mengatur ketebalan garis bawah */
+    text-underline-offset: 4px; /* Mengatur jarak antara garis bawah dan teks */
+}
+  .btn{
+    font-size: 12px;
+  }
+  /* Ubah warna tombol login dan daftar */
+  .btn-outline-success,
+  .btn-danger {
+    color: #000000;
+    background-color: #FFFFFF;
+    border-color: #0f0e0d;
+  }
+
+  /* Ubah warna teks tombol ketika dihover */
+  .btn-outline-success:hover,
+  .btn-danger:hover {
+    color: #fff;
+    background-color: #141fe6;
+    border-color: #030201;
+  }
+
+  #background {
+    max-width: 800px;
+    margin: 0 auto; /* Ini akan membuat container berada di tengah halaman jika lebarnya kurang dari 800px */
+  }
