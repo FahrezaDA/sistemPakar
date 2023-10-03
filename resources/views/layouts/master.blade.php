@@ -15,13 +15,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{asset('img/miniLogo2.png')}}" type="image/x-icon">
 </head>
 
 
 
 <body>
  {{-- logo  --}}
- <link rel="icon" href="{{asset('img/Logo3.1.png')}}" type="image/png">
+
  <nav class="navbar navbar-expand-lg navbar-light ">
      <div class="container">
        <a class="navbar-brand" href="#"><img class="me-3" src="img/Logo3.1.png" alt="" width="40" height="30"> Sistem<span>Pakar</a>
