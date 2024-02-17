@@ -49,16 +49,11 @@
             <li class="nav-item mx-2">
                 <a class="nav-link @if(request()->is('gejala')) active @endif" href="/gejala">Gejala</a>
             </li>
-           <li class="nav-item dropdown">
-             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-               Kategori
-             </a>
-             <ul class="dropdown-menu">
-               <li><a class="dropdown-item" href="#">Kategori 1</a></li>
-               <li><a class="dropdown-item" href="#">Kategori 2</a></li>
-               <li><a class="dropdown-item" href="#">Kategori 3</a></li>
-             </ul>
-           </li>
+
+            <li class="nav-item mx-2">
+                <a class="nav-link @if(request()->is('aturan')) active @endif" href="/aturan">Aturan</a>
+            </li>
+
          </ul>
          <div class="ml-2">
            <a href="#" id="loginNav" class="btn btn-outline-success mr-3 mx-2">Login</a>

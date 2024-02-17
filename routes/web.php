@@ -1,8 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\GejalaController;
+use App\Http\Controllers\PenyakitController;
+use App\Http\Controllers\AturanController;
 /*
+
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -22,14 +25,14 @@ Route::get('/gejala', function () {
     return view('gejala');
 });
 
-Route::get('/aturan', function () {
-    return view('aturan');
-});
+Route::get('/gejala', [GejalaController::class, 'index']);
 
-Route::get('/penyakit', function () {
-    return view('penyakit');
-});
+
+Route::get('/penyakit', [PenyakitController::class, 'index']);
 
 Route::get('/konsultasi', function () {
     return view('konsultasi');
 });
+
+//Aturan
+Route::get('/aturan', [AturanController::class, 'index']);

@@ -13,8 +13,15 @@ return new class extends Migration
     {
         Schema::create('aturan', function (Blueprint $table) {
             $table->id('id_aturan');
+            $table->unsignedBigInteger('id_gejala');
+            $table->unsignedBigInteger('id_penyakit');
+            $table->float('belief');
 
+
+            $table->foreign('id_gejala')->references('id_gejala')->on('gejala')->onDelete('cascade');
+            $table->foreign('id_penyakit')->references('id_penyakit')->on('penyakit')->onDelete('cascade');
         });
+
     }
 
     /**
