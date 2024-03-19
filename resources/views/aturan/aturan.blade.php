@@ -2,6 +2,9 @@
 @section('title', 'aturan')
 
 @section('konten')
+<div class="mb-3" @style("margin-top:15px;")>
+    <a href="{{ route('tambah-aturan') }}" class="btn btn-primary">Tambah Aturan</a>
+</div>
     <table class="table table-striped" id="table-1">
         <thead>
             <tr>
@@ -17,26 +20,27 @@
             <!-- footer content -->
         </tfoot>
         <tbody>
-            @php
-                $gejalaGroups = $aturan->groupBy('gejala_id');
-            @endphp
-            @foreach ($gejalaGroups as $gejalaId => $group)
+            @foreach ($aturan as $data)
                 <tr>
                     <td class="text-center">{{ $loop->iteration }}</td>
-                    <td>{{ optional($group->first()->gejala)->kode_gejala}}</td>
-                    <td>{{ optional($group->first()->gejala)->gejala}}</td>
+                    <td>{{ optional($data->gejala)->kode_gejala}}</td>
+                    <td>{{ optional($data->gejala)->gejala}}</td>
+                    <td>{{ optional($data->penyakit)->nama_penyakit}} ( {{optional($data->penyakit)->kode_penyakit}}) </td>
+
+                    <td>{{ $data->belief }}</td>
+
                     <td>
-                        @foreach ($group as $data)
-                            {{ $data->penyakit->nama_penyakit }} ({{ $data->penyakit->kode_penyakit }}) <br>
-                        @endforeach
-                    </td>
-                    <td>{{ $group->first()->belief }}</td>
-                    <td>
-                        <a href="#" class="edit-button" data-bs-toggle="modal" data-bs-target="#edit-user" data-id_user="{{ $group->first()->id_user }}" data-name="{{ $group->first()->name }}" data-email="{{ $group->first()->email }}" data-area="{{ $group->first()->area }}" data-no_hp="{{ $group->first()->no_hp }}" data-kelas="{{ $group->first()->kelas }}">
+                        <a href="#" class="edit-button" data-bs-toggle="modal" data-bs-target="#edit-user" data-id_user="{{ $data->id_user }}" data-name="{{ $data->name }}" data-email="{{ $data->email }}" data-area="{{ $data->area }}" data-no_hp="{{ $data->no_hp }}" data-kelas="{{ $data->kelas }}">
                             <i class="fas fa-edit"></i>
                         </a>
+
+                        {{-- <a href="{{ route('delete-user', $data->id_user) }}" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">
+                            <i class="fas fa-trash-alt" style="color: red"></i>
+                        </a> --}}
                     </td>
                 </tr>
+                {{-- @include('dashboard.user.edit') --}}
+
             @endforeach
         </tbody>
     </table>

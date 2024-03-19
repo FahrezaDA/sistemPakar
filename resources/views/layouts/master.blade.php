@@ -16,6 +16,48 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="icon" href="{{asset('img/miniLogo2.png')}}" type="image/x-icon">
+
+
+    <link href="{{ asset('img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link href="{{ asset('vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/quill/quill.snow.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/quill/quill.bubble.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/simple-datatables/style.css') }}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    <style>
+        .gejala {
+            color: red;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .form {
+            margin-top: 70px;
+        }
+
+        .diagnosa {
+            margin: 10px;
+            max-height: 300px;
+            overflow: auto;
+            border: 3px solid #a3f0ff;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+    </style>
 </head>
 
 
@@ -39,7 +81,7 @@
 
 
            <li class="nav-item mx-2">
-            <a class="nav-link @if(request()->is('konsultasi')) active @endif" href="/konsultasi">Konsultasi</a>
+            <a class="nav-link @if(request()->is('konsultasi')) active @endif" href="/diagnosa">Konsultasi</a>
             </li>
 
             <li class="nav-item mx-2">

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GejalaController;
 use App\Http\Controllers\PenyakitController;
 use App\Http\Controllers\AturanController;
+use App\Http\Controllers\KonsultasiController;
 /*
 
 |--------------------------------------------------------------------------
@@ -36,3 +37,14 @@ Route::get('/konsultasi', function () {
 
 //Aturan
 Route::get('/aturan', [AturanController::class, 'index']);
+Route::post('/tambah-aturan', [Atu21ranController::class, 'store'])->name('tambah-aturan');
+
+//konsultasi
+Route::get('diagnosa', [KonsultasiController::class, 'index']);
+Route::post('diagnosa', [KonsultasiController::class, 'hitungKonsultasi']);
+Route::get('diagnosa/{data_diagnosa}', [KonsultasiController::class, 'showdata']);
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -7,7 +7,7 @@
     <div class="textBox slide-right">
         <h1>Sistem Pakar Deteksi Dini Penyakit Mulut dan Kuku Pada Sapi</h1>
         <p > Deteksi Cepat Penyakit pada Sapi untuk Kesehatan Ternak yang Lebih Baik </p>
-        <a href="/konsultasi" class="btn btn-success">Mulai</a>
+        <a href="/diagnosa" class="btn btn-success">Mulai</a>
 
     </div>
         <div class="imgBox">

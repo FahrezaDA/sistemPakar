@@ -14,6 +14,7 @@ return new class extends Migration
             $table->id('id_gejala');
             $table->string('kode_gejala');
             $table->string('gejala');
+            $table->double('nilai_densitas');
 
             $table->timestamps();
         });

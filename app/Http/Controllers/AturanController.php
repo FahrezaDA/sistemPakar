@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Aturan;
 use App\Models\Gejala;
 use App\Models\Penyakit;
+use Illuminate\Support\Facades\DB;
 class AturanController extends Controller
 {
     /**
@@ -17,6 +18,7 @@ class AturanController extends Controller
         $Gejala = Gejala::all();
         $Penyakit = Penyakit::all();
         $gejalas = Gejala::orderBy('id_gejala')->get();
+
         return view("aturan.aturan", compact('aturan','gejalas'));
     }
 
