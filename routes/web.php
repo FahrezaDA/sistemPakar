@@ -5,6 +5,7 @@ use App\Http\Controllers\GejalaController;
 use App\Http\Controllers\PenyakitController;
 use App\Http\Controllers\AturanController;
 use App\Http\Controllers\KonsultasiController;
+use App\Http\Controllers\Auth\LoginController;
 /*
 
 |--------------------------------------------------------------------------
@@ -35,6 +36,11 @@ Route::get('/konsultasi', function () {
     return view('konsultasi');
 });
 
+
+
+
+Auth::routes();
+Route::middleware(['auth'])->group(function () {
 //Aturan
 Route::get('/aturan', [AturanController::class, 'index']);
 Route::post('/tambah-aturan', [Atu21ranController::class, 'store'])->name('tambah-aturan');
@@ -43,8 +49,9 @@ Route::post('/tambah-aturan', [Atu21ranController::class, 'store'])->name('tamba
 Route::get('diagnosa', [KonsultasiController::class, 'index']);
 Route::post('diagnosa', [KonsultasiController::class, 'hitungKonsultasi']);
 Route::get('diagnosa/{data_diagnosa}', [KonsultasiController::class, 'showdata']);
+Route::get('logoutt', [LoginController::class, 'logout']);
 
 
-Auth::routes();
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

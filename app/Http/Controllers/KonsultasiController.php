@@ -59,7 +59,7 @@ class KonsultasiController extends Controller
         $validateReq = $request->validate([
             'nama' => 'required',
             'alamat' => 'required',
-            'jenis_sapi' => 'required'
+            // 'jenis_sapi' => 'required'
         ]);
 
         $arrHasilUser = $request->input('resultGejala');
@@ -105,7 +105,7 @@ class KonsultasiController extends Controller
                 $hasil = new Hasil();
                 $hasil->nama = $validateReq['nama'];
                 $hasil->alamat = $validateReq['alamat'];
-                $hasil->jenis_sapi = $validateReq['jenis_sapi'];
+                // $hasil->jenis_sapi = $validateReq['jenis_sapi'];
                 $hasil->hasil_diagnosa = json_encode($variabelTampilan);
                 $hasil->solusi = $variabelTampilan['Solusi_Penyakit']['solusi'];
                 $hasil->save();
