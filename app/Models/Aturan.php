@@ -8,6 +8,7 @@ class Aturan extends Model
 {
     use HasFactory;
 
+    protected $primaryKey ="id_aturan";
     protected $table = 'aturan';
 
     // Relasi ke model Gejala

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('id_hasil');
             $table->string('nama');
             $table->text('alamat');
-            $table->string('jenis_sapi');
+            $table->string('jenis_sapi')->default(null);
             $table->longText('hasil_diagnosa');
             $table->longText('solusi');
             $table->timestamps();

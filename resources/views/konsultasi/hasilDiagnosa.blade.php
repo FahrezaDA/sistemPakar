@@ -9,6 +9,9 @@
     <div class="card-body" style="padding: 8px;">
         <h6 class="text-custom"><b>1. Pengunjung</b></h6>
         <div class="row row-cols-md-2">
+            <div class="col mb-2" @style("display:none;")>
+                <strong>id hasil</strong> {{ $dataDiagnosa['id_hasil'] }}
+            </div>
             <div class="col mb-2">
                 <strong>Nama:</strong> {{ $dataDiagnosa['nama'] }}
             </div>
@@ -46,5 +49,7 @@
     <div class="card-footer"></div>
 </div>
 <a href="{{ URL::to('diagnosa') }}" class="btn btn-sm btn-info text-white"><i class="fa-solid fa-arrow-left me-1"></i> Diagnosa Ulang</a>
+<a href="{{ URL::to('cetakHasil/' . $dataDiagnosa['id_hasil']) }}" class="btn btn-sm btn-info text-white"><i class="fa-solid fa-arrow-left me-1"></i> Cetak</a>
+
 
 @endsection

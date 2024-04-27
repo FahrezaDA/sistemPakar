@@ -93,7 +93,7 @@
                 </table>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <button class="btn btn-info fw-bold" type="submit"><i class="fa-solid fa-floppy-disk me-1"></i> Hitung</button>
-                    <button class="btn btn-danger fw-bold" type="reset"><i class="fa-solid fa-ban me-1"></i> Cancel</button>
+                    <button class="btn btn-danger fw-bold" href="{{route('home')}}" type="reset"><i class="fa-solid fa-ban me-1"></i> Cancel</button>
                 </div>
             </form>
         </div>

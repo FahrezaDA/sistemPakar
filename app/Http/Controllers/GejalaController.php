@@ -11,8 +11,12 @@ class GejalaController extends Controller
      */
     public function index()
     {
-        $gejala=Gejala::all();
-        return view("gejala",compact("gejala"));
+        $gejala = Gejala::all();
+        if(auth()->user()->role == 'pengguna') {
+            return view("gejala.gejala", compact("gejala"));
+        } elseif(auth()->user()->role == 'admin') {
+            return view("dashboard.gejala.gejala", compact("gejala"));
+        }
     }
 
     /**
@@ -28,8 +32,17 @@ class GejalaController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+            $validatedData = $request->validate([
+                'kode_gejala' => 'required|string',
+                'gejala' => 'required|string',
+                'nilai_densitas' => 'required|string',
+            ]);
+
+            Gejala::create($validatedData);
+
+            return redirect('gejala')->with('success', 'Data gejala berhasil disimpan.');
+        }
+
 
     /**
      * Display the specified resource.
@@ -58,8 +71,11 @@ class GejalaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id_gejala)
     {
-        //
-    }
+        $gejala = Gejala::find($id_gejala);
+        $gejala->delete();
+        return redirect()->route('gejala');
+}
+
 }

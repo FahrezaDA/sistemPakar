@@ -41,18 +41,32 @@ class KonsultasiController extends Controller
     /**
      * Display the specified resource.
      */
-    public function showdata($data_diagnosa)
-    {
-        $dataDiagnosa = Hasil::find($data_diagnosa)->toArray();
+    public function showdata($id_hasil)
+{
+    $dataDiagnosa = Hasil::find($id_hasil)->toArray();
 
-        $dataTampilan = [
-            'navLink' => 'diagnosa',
-            'dataDiagnosa' => $dataDiagnosa,
-            'hasilDiagnosa' => json_decode($dataDiagnosa['hasil_diagnosa'])
-        ];
+    $dataTampilan = [
+        'navLink' => 'diagnosa',
+        'dataDiagnosa' => $dataDiagnosa,
+        'hasilDiagnosa' => json_decode($dataDiagnosa['hasil_diagnosa'])
+    ];
 
-        return view('konsultasi.hasilDiagnosa', $dataTampilan);
-    }
+    return view('konsultasi.hasilDiagnosa', $dataTampilan);
+}
+
+public function cetakHasil($id_hasil)
+{
+    $dataDiagnosa = Hasil::find($id_hasil)->toArray();
+
+    $dataTampilan = [
+        'navLink' => 'diagnosa',
+        'dataDiagnosa' => $dataDiagnosa,
+        'hasilDiagnosa' => json_decode($dataDiagnosa['hasil_diagnosa'])
+    ];
+
+    return view('konsultasi.cetak-diagnosa', $dataTampilan);
+}
+
 
     public function hitungKonsultasi(Request $request)
     {
@@ -111,11 +125,10 @@ class KonsultasiController extends Controller
                 $hasil->save();
                 $idHasil = $hasil->id_hasil;
 
-                if ($idDiagnosa == $idHasil) {
-                    return redirect()->to('diagnosa/' . $idDiagnosa);
-                } else {
-                    return back()->withInput();
-                }
+
+                    return redirect()->to('diagnosa/' . $idHasil);
+
+
             }
         }
     }

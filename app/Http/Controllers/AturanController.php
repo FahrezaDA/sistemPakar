@@ -19,7 +19,7 @@ class AturanController extends Controller
         $Penyakit = Penyakit::all();
         $gejalas = Gejala::orderBy('id_gejala')->get();
 
-        return view("aturan.aturan", compact('aturan','gejalas'));
+        return view("dashboard.aturan.aturan", compact('aturan','gejalas'));
     }
 
     /**
@@ -65,8 +65,10 @@ class AturanController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id_aturan)
     {
-        //
+        $aturan = Aturan::find($id_aturan);
+        $aturan->delete();
+        return redirect()->route('aturan');
     }
 }

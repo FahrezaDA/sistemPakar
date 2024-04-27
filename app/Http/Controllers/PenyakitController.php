@@ -13,8 +13,13 @@ class PenyakitController extends Controller
     public function index()
     {
         $penyakit = Penyakit::all();
-        return view("penyakit.penyakit", compact("penyakit"));
+        if(auth()->user()->role == 'pengguna') {
+            return view("penyakit.penyakit", compact("penyakit"));
+        } elseif(auth()->user()->role == 'admin') {
+            return view("dashboard.penyakit.penyakit", compact("penyakit"));
+        }
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -59,8 +64,9 @@ class PenyakitController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id_penyakit)
     {
-        //
-    }
+        $penyakit = Penyakit::find($id_penyakit);
+        $penyakit->delete();
+        return redirect()->route('penyakit');}
 }
