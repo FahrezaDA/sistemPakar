@@ -24,12 +24,6 @@ Route::get('/', function () {
 
 
 
-Route::get('/gejala', function () {
-    return view('gejala');
-});
-
-Route::get('/gejala', [GejalaController::class, 'index']);
-
 
 
 
@@ -42,14 +36,21 @@ Route::get('/konsultasi', function () {
 
 Auth::routes();
 Route::middleware(['auth'])->group(function () {
+
 //Aturan
-Route::get('/aturan', [AturanController::class, 'index']);
-Route::post('/add-aturan', [AturanController::class, 'store'])->name('add-aturan');
-Route::get('/delete-aturan/{id_aturan}',[AturanController::class,'destroy'])->name('delete-aturan');
+Route::get('aturan', [AturanController::class, 'index'])->name('aturan');
+Route::post('add-aturan', [AturanController::class, 'store'])->name('add-aturan');
+Route::get('delete-aturan/{id_aturan}',[AturanController::class,'destroy'])->name('delete-aturan');
+Route::put('update-aturan/{id_aturan}',[AturanController::class,'update'])->name('update-aturan');
 
 //Gejala
-Route::post('/add-gejala', [GejalaController::class, 'store'])->name("add-gejala");
+Route::get('gejala',[GejalaController::class,'index'])->name('gejala');
+Route::post('add-gejala', [GejalaController::class, 'store'])->name("add-gejala");
 Route::get('delete-produk/{id_gejala}', [App\Http\Controllers\GejalaController::class,'destroy'])->name('delete-gejala');
+Route::put('update-gejala/{id_gejala}',[GejalaController::class,'update'])->name('update-gejala');
+
+
+
 
 //konsultasi
 Route::get('diagnosa', [KonsultasiController::class, 'index']);
@@ -58,12 +59,13 @@ Route::get('diagnosa/{data_diagnosa}', [KonsultasiController::class, 'showdata']
 Route::get('cetakHasil/{id_hasil}', [KonsultasiController::class, 'cetakHasil']);
 Route::get('logoutt', [LoginController::class, 'logout']);
 
-//Penyakit
-Route::get('/penyakit', [PenyakitController::class, 'index']);
-Route::post('/add-penyakit', [PenyakitController::class, 'store'])->name("add-gejala");
-Route::get('delete-penyakit/{id_penyakit}', [App\Http\Controllers\PenyakitController::class,'destroy'])->name('delete-penyakit');
 
+//Penyakit
+Route::get('penyakit', [PenyakitController::class, 'index'])->name('penyakit');
+Route::post('add-penyakit', [PenyakitController::class, 'store'])->name("add-penyakit");
+Route::get('delete-penyakit/{id_penyakit}', [App\Http\Controllers\PenyakitController::class,'destroy'])->name('delete-penyakit');
+Route::put('update-penyakit/{id_penyakit}',[PenyakitController::class,'update'])->name('update-penyakit');
 
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

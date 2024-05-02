@@ -32,16 +32,29 @@ class GejalaController extends Controller
      */
     public function store(Request $request)
     {
+        try {
             $validatedData = $request->validate([
                 'kode_gejala' => 'required|string',
                 'gejala' => 'required|string',
                 'nilai_densitas' => 'required|string',
             ]);
 
-            Gejala::create($validatedData);
+            // Buat objek Gejala baru
+            $gejala = new Gejala();
+            $gejala->kode_gejala = $validatedData['kode_gejala'];
+            $gejala->gejala = $validatedData['gejala'];
+            $gejala->nilai_densitas = $validatedData['nilai_densitas'];
 
-            return redirect('gejala')->with('success', 'Data gejala berhasil disimpan.');
+            // Simpan objek Gejala ke dalam database
+            $gejala->save();
+
+            // Redirect kembali ke halaman yang sesuai
+            return redirect('gejala')->with('success', 'Gejala berhasil ditambahkan!');
+        } catch (\Exception $e) {
+            // Tangkap pengecualian dan tampilkan pesan kesalahan
+            return redirect('home')->withInput()->withErrors(['error' => $e->getMessage()]);
         }
+    }
 
 
     /**
@@ -63,9 +76,24 @@ class GejalaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id_gejala)
     {
-        //
+        $validatedData = $request->validate([
+            'kode_gejala' => 'required|string|max:255',
+            'gejala' => 'required|string|max:255', // Foto produk menjadi opsional untuk diubah
+            'nilai_densitas' => 'required|string|max:255',
+        ]);
+
+        // Dapatkan data produk berdasarkan ID
+        $gejala = Gejala::findOrFail($id_gejala);
+
+        // Perbarui data produk
+        $gejala->kode_gejala = $validatedData['kode_gejala'];
+        $gejala->gejala = $validatedData['gejala'];
+        $gejala->nilai_densitas = $validatedData['nilai_densitas'];
+
+        $gejala->save();
+        return redirect()->route('gejala')->with('success', 'Produk berhasil diperbarui.');
     }
 
     /**

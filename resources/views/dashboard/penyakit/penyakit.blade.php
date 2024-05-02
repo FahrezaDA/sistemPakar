@@ -113,11 +113,11 @@
                                             <td>{{ $data->solusi }}</td>
 
                                             <td>
-                                                {{-- <a href="#" class="edit-button" data-bs-toggle="modal" data-bs-target="#edit-gejala"
-                                                   data-id_gejala="{{ $data->id_gejala }}" data-kode-gejala="{{ $data->kode_gejala }}"
-                                                   data-gejala="{{ $data->gejala }}" data-nilai-densitas="{{ $data->nilai_densitas}}">
+                                                <a href="#" class="edit-button" data-bs-toggle="modal" data-bs-target="#edit-penyakit"
+                                                   data-id_penyakit="{{ $data->id_penyakit }}" data-kode_penyakit="{{ $data->kode_penyakit }}"
+                                                   data-nama_penyakit="{{ $data->nama_penyakit }}" data-deskripsi_penyakit="{{ $data->deskripsi_penyakit}}", data-solusi="{{ $data->solusi}}">
                                                     <i class="fas fa-edit"></i>
-                                                </a> --}}
+                                                </a>
                                                 <a href="{{ route('delete-penyakit', $data->id_penyakit) }}" onclick="return confirm('Apakah Anda yakin ingin menghapus data penyakit ini?')">
                                                     <i class="fas fa-trash-alt" style="color: red"></i>
                                                 </a>
@@ -126,7 +126,7 @@
                                         </tr>
                                     @endforeach
 
-                                    {{-- @include('dashboard.produk.edit-produk') --}}
+                                    @include('dashboard.penyakit.edit-penyakit')
 
                                     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                                     <script>

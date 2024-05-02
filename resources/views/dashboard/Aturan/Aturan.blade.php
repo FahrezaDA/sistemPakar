@@ -111,11 +111,11 @@
 
 
                                             <td>
-                                                {{-- <a href="#" class="edit-button" data-bs-toggle="modal" data-bs-target="#edit-gejala"
-                                                   data-id_gejala="{{ $data->id_aturan }}" data-kode-gejala="{{ $data->kode_gejala }}"
-                                                   data-gejala="{{ $data->gejala }}" data-nilai-densitas="{{ $data->nilai_densitas}}">
+                                                <a href="#" class="edit-button" data-bs-toggle="modal" data-bs-target="#edit-aturan"
+                                                   data-id_aturan="{{ $data->id_aturan }}" data-kode_penyakit="{{ $data->kode_penyakit }}"
+                                                   data-kode_gejala="{{ $data->kode_gejala }}">
                                                     <i class="fas fa-edit"></i>
-                                                </a> --}}
+                                                </a>
                                                 <a href="{{ route('delete-aturan', $data->id_aturan) }}" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">
                                                     <i class="fas fa-trash-alt" style="color: red"></i>
                                                 </a>
@@ -124,9 +124,9 @@
                                         </tr>
                                     @endforeach
 
-                                    {{-- @include('dashboard.produk.edit-produk') --}}
+                                    @include('dashboard.aturan.edit-aturan')
 
-                                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                                    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                                     <script>
                                         $(document).ready(function() {
                                             $('.edit-button').click(function() {
@@ -136,14 +136,14 @@
                                                 var harga = $(this).data('harga');
                                                 var stok = $(this).data('stok');
 
-                                                $('#edit-produk').find('#edit-id').val(id_produk);
-                                                $('#edit-produk').find('#edit-nama').val(nama);
-                                                $('#edit-produk').find('#edit-foto').val(foto);
-                                                $('#edit-produk').find('#edit-harga').val(harga);
-                                                $('#edit-produk').find('#edit-stok').val(stok);
+                                                $('#edit-aturan').find('#edit-id').val(id_aturan);
+                                                $('#edit-aturan').find('#edit-nama').val(nama);
+                                                $('#edit-aturan').find('#edit-foto').val(foto);
+                                                $('#edit-aturan').find('#edit-harga').val(harga);
+                                                $('#edit-aturan').find('#edit-stok').val(stok);
                                             });
                                         });
-                                    </script>
+                                    </script> --}}
 
                                     </tbody>
                                 </table>

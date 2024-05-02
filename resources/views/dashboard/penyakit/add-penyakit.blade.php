@@ -9,7 +9,7 @@ aria-hidden="true">
             </button>
         </div>
         <div class="modal-body">
-           <form action="{{ route('add-gejala') }}" class="needs-validation" novalidate="" method="POST" enctype="multipart/form-data">
+           <form action="{{ route('add-penyakit') }}" class="needs-validation" novalidate="" method="POST" enctype="multipart/form-data">
             @csrf
             @method('POST')
     <div class="form-group">
@@ -18,7 +18,7 @@ aria-hidden="true">
     </div>
     <div class="form-group">
         <label for="edit-email">Nama Penyakit</label>
-        <input type="text" name="gejala" class="form-control"  placeholder="Masukkan Nama Penyakit">
+        <input type="text" name="nama_penyakit" class="form-control"  placeholder="Masukkan Nama Penyakit">
     </div>
     <div class="form-group">
         <label for="edit-area">Deskripsi Penyakit</label>
@@ -26,7 +26,7 @@ aria-hidden="true">
     </div>
     <div class="form-group">
         <label for="edit-area">Solusi</label>
-        <input type="text" name="Solusi" class="form-control"  placeholder="Masukkan Solusi">
+        <input type="text" name="solusi" class="form-control"  placeholder="Masukkan Solusi">
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

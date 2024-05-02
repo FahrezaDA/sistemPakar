@@ -1,4 +1,4 @@
-<div class="modal fade" id="add-produk" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel"
+<div class="modal fade" id="add-gejala" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel"
 aria-hidden="true">
 <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -9,19 +9,18 @@ aria-hidden="true">
             </button>
         </div>
         <div class="modal-body">
-           <form action="{{ route('add-gejala') }}" class="needs-validation" novalidate="" method="POST" enctype="multipart/form-data">
+           <form action="{{ route('add-gejala') }}" class="needs-validation" novalidate="" method="POST">
             @csrf
-            @method('POST')
     <div class="form-group">
-        <label for="edit-name">Kode Gejala</label>
+        <label for="edit-kode_gejala">Kode Gejala</label>
         <input type="text" name="kode_gejala" class="form-control"  placeholder="Masukkan Kode Gejala">
     </div>
     <div class="form-group">
-        <label for="edit-email">Gejala</label>
+        <label for="edit-gejala">Gejala</label>
         <input type="text" name="gejala" class="form-control"  placeholder="Masukkan Gejala">
     </div>
     <div class="form-group">
-        <label for="edit-area">Nilai Densitas</label>
+        <label for="edit-nilai_densitas">Nilai Densitas</label>
         <input type="text" name="nilai_densitas" class="form-control"  placeholder="Masukkan Nilai Densitas">
     </div>
 

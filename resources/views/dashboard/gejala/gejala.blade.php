@@ -82,7 +82,7 @@
                             <h6 class="m-0 font-weight-bold text-primary">Data Gejala</h6>
                         </div>
                         <div class="card-header py-3">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-produk">Tambah Gejala</button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-gejala">Tambah Gejala</button>
                         @include('dashboard.gejala.add-gejala')
                         {{-- @include('dashboard.produk.add-produk-to-admin') --}}
                         </div>
@@ -112,8 +112,8 @@
 
                                             <td>
                                                 <a href="#" class="edit-button" data-bs-toggle="modal" data-bs-target="#edit-gejala"
-                                                   data-id_gejala="{{ $data->id_gejala }}" data-kode-gejala="{{ $data->kode_gejala }}"
-                                                   data-gejala="{{ $data->gejala }}" data-nilai-densitas="{{ $data->nilai_densitas}}">
+                                                   data-id_gejala="{{ $data->id_gejala }}" data-kode_gejala="{{ $data->kode_gejala }}"
+                                                   data-gejala="{{ $data->gejala }}" data-nilai_densitas="{{ $data->nilai_densitas}}">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
                                                 <a href="{{ route('delete-gejala', $data->id_gejala) }}" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">
@@ -123,24 +123,23 @@
                                             </td>
                                         </tr>
                                     @endforeach
-
-                                    {{-- @include('dashboard.produk.edit-produk') --}}
+                                    @include('dashboard.gejala.edit-gejala')
 
                                     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                                     <script>
                                         $(document).ready(function() {
                                             $('.edit-button').click(function() {
-                                                var id_produk = $(this).data('id_produk');
-                                                var nama = $(this).data('nama');
-                                                var foto = $(this).data('foto');
-                                                var harga = $(this).data('harga');
-                                                var stok = $(this).data('stok');
+                                                var id_gejala = $(this).data('id_gejala');
+                                                var kode_gejala = $(this).data('kode_gejala');
+                                                var gejala = $(this).data('gejala');
+                                                var nilai_densitas = $(this).data('nilai_densitas');
 
-                                                $('#edit-produk').find('#edit-id').val(id_produk);
-                                                $('#edit-produk').find('#edit-nama').val(nama);
-                                                $('#edit-produk').find('#edit-foto').val(foto);
-                                                $('#edit-produk').find('#edit-harga').val(harga);
-                                                $('#edit-produk').find('#edit-stok').val(stok);
+
+                                                $('#edit-gejala').find('#edit-id_gejala').val(id_gejala);
+                                                $('#edit-gejala').find('#edit-kode_gejala').val(kode_gejala);
+                                                $('#edit-gejala').find('#edit-gejala').val(gejala);
+                                                $('#edit-gejala').find('#edit-nilai_densitas').val(nilai_densitas);
+
                                             });
                                         });
                                     </script>
@@ -161,6 +160,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 <!-- Modal Add Data -->
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
 <div class="modal fade" id="add-gejala" tabindex="-1" role="dialog" aria-labelledby="addGejalaModalLabel"
 aria-hidden="true">

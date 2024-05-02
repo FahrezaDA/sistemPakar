@@ -35,7 +35,15 @@ class AturanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'kode_penyakit' => 'required|string',
+            'kode_gejala' => 'required|string',
+
+        ]);
+
+        Penyakit::create($validatedData);
+
+        return redirect('penyakit')->with('success', 'Data gejala berhasil disimpan.');
     }
 
     /**
@@ -57,9 +65,22 @@ class AturanController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id_aturan)
     {
-        //
+        $validatedData = $request->validate([
+            'kode_penyakit' => 'required|string|max:255',
+            'kode_gejala' => 'required|string|max:255', // Foto produk menjadi opsional untuk diubah
+        ]);
+
+        // Dapatkan data produk berdasarkan ID
+        $aturan = Aturan::findOrFail($id_aturan);
+
+        // Perbarui data produk
+        $aturan->kode_penyakit = $validatedData['kode_penyakit'];
+        $aturan->kode_gejala = $validatedData['kode_gejala'];
+
+        $aturan->save();
+        return redirect()->route('aturan')->with('success', 'Produk berhasil diperbarui.');
     }
 
     /**
