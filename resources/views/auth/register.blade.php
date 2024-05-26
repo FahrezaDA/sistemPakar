@@ -79,6 +79,10 @@
                                     <label class="form-label" for="alamat">Alamat</label>
                                     <input id="alamat" type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat" value="{{ old('alamat') }}" required autocomplete="alamat">
                                 </div>
+                                <div class="form-outline mb-3"> <!-- Ubah margin menjadi mb-3 -->
+                                    <label class="form-label" for="no_telpon">No Telpon</label>
+                                    <input id="no_telpon" type="text" class="form-control @error('no_telpon') is-invalid @enderror" name="no_telpon" value="{{ old('alamat') }}" required autocomplete="no_telpon">
+                                </div>
                                 <div class="text-center mb-3"> <!-- Ubah margin menjadi mb-3 -->
                                     <button type="submit" class="btn btn-primary btn-block">Daftar</button>
                                 </div>

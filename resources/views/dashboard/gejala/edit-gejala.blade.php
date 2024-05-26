@@ -25,7 +25,7 @@
 
 
 
-<div class="modal fade" id="edit-gejala" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel"
+<div class="modal fade" id="edit-gejala--{{$data->id_gejala}}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel"
 aria-hidden="true">
 <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -45,20 +45,20 @@ aria-hidden="true">
                 @method('PUT')
                 <div class="form-group" @style('display:none;')>
                     <label for="edit-id_gejala">Name</label>
-                    <input type="text" name="id_gejala"  class="form-control" id="id_gejala" placeholder="Enter name">
+                    <input type="text" name="id_gejala"  class="form-control" value="{{$data->id_gejala}}" id="id_gejala" placeholder="Enter name">
                 </div>
                 <div class="form-group">
                     <label for="edit-kode_gejala">Kode Gejala</label>
-                    <input type="text" name="kode_gejala"  class="form-control" id="kode_gejala" placeholder="Enter name">
+                    <input type="text" name="kode_gejala"  class="form-control" value="{{$data->kode_gejala}}" id="kode_gejala" placeholder="Enter name">
                 </div>
                 <div class="form-group">
                     <label for="edit-gejala">Gejala</label>
-                    <input type="text" name="gejala" class="form-control" id="gejala"  placeholder="Enter email">
+                    <input type="text" name="gejala" class="form-control" value="{{$data->gejala}}" id="gejala"  placeholder="Enter email">
 
                 </div>
                 <div class="form-group">
                     <label for="edit-harga">Nilai Densitas</label>
-                    <input type="text" name="nilai_densitas" class="form-control" id="nilai_densitas" placeholder="Enter harga">
+                    <input type="text" name="nilai_densitas" class="form-control" value="{{$data->nilai_densitas}}" id="nilai_densitas" placeholder="Enter harga">
                 </div>
 
 

@@ -7,11 +7,11 @@
     <div class="col-xxl-5 mx-auto">
         <!-- Header text content-->
         <div class="text-center text-xxl-start mb-4">
-            <div class="badge bg-primary text-white" style="font-size: 24px;"><div class="text-uppercase"> PILIH GEJALA</div></div>
+            <div class="badge " style="font-size: 24px; color:brown; font-weight:900;"><div class="text-uppercase"> <u>PILIH GEJALA</u></div></div>
         </div>
     </div>
     <div class="card kartu-custom">
-        <div class="card-header bg-primary text-white fw-bold">
+        <div @style('background-color:#A67B5B;') class="card-header text-white fw-bold">
             Konsultasi Gejala
         </div>
         <div class="card-body">
@@ -92,8 +92,8 @@
                     </tbody>
                 </table>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="btn btn-info fw-bold" type="submit"><i class="fa-solid fa-floppy-disk me-1"></i> Hitung</button>
-                    <button class="btn btn-danger fw-bold" href="{{route('home')}}" type="reset"><i class="fa-solid fa-ban me-1"></i> Cancel</button>
+                    <button class="btn btn-add fw-bold" type="submit"><i class="fa-solid fa-floppy-disk me-1"></i> Hitung</button>
+                    {{-- <button class="btn btn-danger fw-bold" href="{{route('home')}}" type="reset"><i class="fa-solid fa-ban me-1"></i> Cancel</button> --}}
                 </div>
             </form>
         </div>

@@ -45,15 +45,15 @@ aria-hidden="true">
                 @method('PUT')
                 <div class="form-group" @style('display:none;')>
                     <label for="edit-id_aturan">Name</label>
-                    <input type="text" name="id_aturan"  class="form-control" id="id_aturan" placeholder="Enter name">
+                    <input type="text" name="id_aturan"  class="form-control" value="{{$data->id_aturan}}" id="id_aturan" placeholder="Enter name">
                 </div>
                 <div class="form-group">
                     <label for="edit-kode_penyakit">Kode penyakit</label>
-                    <input type="text" name="kode_penyakit"  class="form-control" id="kode_penyakit" placeholder="Enter name">
+                    <input type="text" name="kode_penyakit"  class="form-control" value="{{$data->kode_penyakit}}" id="kode_penyakit" placeholder="Enter name">
                 </div>
                 <div class="form-group">
                     <label for="edit-gejala">Kode Gejala </label>
-                    <input type="text" name="kode_gejala" class="form-control" id="kode_gejala"  placeholder="Enter email">
+                    <input type="text" name="kode_gejala" class="form-control" value="{{$data->kode_gejala}}" id="kode_gejala"  placeholder="Enter email">
 
                 </div>
 

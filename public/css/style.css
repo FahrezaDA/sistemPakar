@@ -67,10 +67,10 @@ background-size: cover;
 }
 
 #loginNav{
-background-color: #1bca18;
+background-color: #FED8B1;
 }
 .navbar {
-    background-color: #93c5ea;
+    background-color: #A67B5B;
     border-bottom: 1px solid #e1e1e1;
   }
 
@@ -153,4 +153,28 @@ background-color: #1bca18;
   #background {
     max-width: 800px;
     margin: 0 auto; /* Ini akan membuat container berada di tengah halaman jika lebarnya kurang dari 800px */
+  }
+
+  .btn-add{
+    background-color: #ECB176;
+    color: #000000;
+    font-weight: 700;
+    /* background: #141fe6; */
+  }
+
+  .btn-print{
+    background-color: #44a344;
+    font-weight: 700;
+  }
+
+  #aw{
+    margin-bottom: 10px;
+  }
+  h6{
+    text-align: center;
+    font-size: 26px ;
+  }
+
+  #card-dashboard{
+    margin-top: 20px;
   }

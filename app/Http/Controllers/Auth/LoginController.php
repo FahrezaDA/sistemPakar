@@ -45,6 +45,15 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('login');
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        if ($user->role === 'admin') {
+            return redirect()->intended('/dashboard');
+        } else {
+            return redirect()->intended('/');
+        }
     }
 }

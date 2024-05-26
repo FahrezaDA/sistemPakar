@@ -28,7 +28,7 @@
 
 
 
-<div class="modal fade" id="edit-penyakit" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel"
+<div class="modal fade" id="edit-penyakit--{{$data->id_penyakit}}" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel"
 aria-hidden="true">
 <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -48,24 +48,24 @@ aria-hidden="true">
                 @method('PUT')
                 <div class="form-group" @style('display:none;')>
                     <label for="edit-id_penyakit">ID Penyakit</label>
-                    <input type="text" name="id_penyakit"  class="form-control" id="id_penyakit" placeholder="Enter name">
+                    <input type="text" name="id_penyakit" value="{{$data->id_penyakit}}" class="form-control" id="id_penyakit" placeholder="Enter name">
                 </div>
                 <div class="form-group">
                     <label for="edit-kode_penyakit">Kode Penyakit</label>
-                    <input type="text" name="kode_penyakit"  class="form-control" id="kode_penyakit" placeholder="Enter name">
+                    <input type="text" name="kode_penyakit"  value="{{$data->kode_penyakit}}" class="form-control" id="kode_penyakit" placeholder="Enter name">
                 </div>
                 <div class="form-group">
                     <label for="edit-kode_gejala">Nama Penyakit</label>
-                    <input type="text" name="nama_penyakit"  class="form-control" id="nama_penyakit" placeholder="Enter Penyakit">
+                    <input type="text" name="nama_penyakit"  class="form-control" value="{{$data->nama_penyakit}}" id="nama_penyakit" placeholder="Enter Penyakit">
                 </div>
                 <div class="form-group">
                     <label for="edit-deskripsi_penyakit">Deskripsi Penyakit</label>
-                    <input type="text" name="deskripsi_penyakit" class="form-control" id="deskripsi_penyakit"  placeholder="Enter Deskripsi Penyakit">
+                    <input type="text" name="deskripsi_penyakit" class="form-control" value="{{$data->deskripsi_penyakit}}" id="deskripsi_penyakit"  placeholder="Enter Deskripsi Penyakit">
 
                 </div>
                 <div class="form-group">
                     <label for="edit-solusi">Solusi</label>
-                    <input type="text" name="solusi" class="form-control" id="solusi" placeholder="Enter Solusi">
+                    <input type="text" name="solusi" class="form-control" value="{{$data->solusi}}" id="solusi" placeholder="Enter Solusi">
                 </div>
 
 

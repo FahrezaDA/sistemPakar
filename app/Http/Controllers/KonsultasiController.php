@@ -165,12 +165,17 @@ public function cetakHasil($id_hasil)
             ->select('solusi')
             ->get()
             ->toArray()[0];
+            $dataDeskripsi = Penyakit::where('kode_penyakit', $kodePenyakit)
+            ->select('deskripsi_penyakit')
+            ->get()
+            ->toArray()[0];
 
         $jsonData = [
             'Nama_Penyakit' => $dataPenyakit,
             'Nilai_Belief_Penyakit' => $nilaiBelief,
             'Persentase_Penyakit' => $persentase,
             'Solusi_Penyakit' => $dataSolusi,
+            'Deskripsi_Penyakit' => $dataDeskripsi,
         ];
 
         return $jsonData;

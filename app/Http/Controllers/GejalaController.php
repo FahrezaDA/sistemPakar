@@ -13,7 +13,7 @@ class GejalaController extends Controller
     {
         $gejala = Gejala::all();
         if(auth()->user()->role == 'pengguna') {
-            return view("gejala.gejala", compact("gejala"));
+            return view("user.gejala.gejala", compact("gejala"));
         } elseif(auth()->user()->role == 'admin') {
             return view("dashboard.gejala.gejala", compact("gejala"));
         }

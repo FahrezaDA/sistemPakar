@@ -5,7 +5,9 @@ use App\Http\Controllers\GejalaController;
 use App\Http\Controllers\PenyakitController;
 use App\Http\Controllers\AturanController;
 use App\Http\Controllers\KonsultasiController;
+use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\HomeController;
 /*
 
 |--------------------------------------------------------------------------
@@ -49,6 +51,13 @@ Route::post('add-gejala', [GejalaController::class, 'store'])->name("add-gejala"
 Route::get('delete-produk/{id_gejala}', [App\Http\Controllers\GejalaController::class,'destroy'])->name('delete-gejala');
 Route::put('update-gejala/{id_gejala}',[GejalaController::class,'update'])->name('update-gejala');
 
+//Riwayat
+Route::get('riwayat',[RiwayatController::class,'index'])->name('riwayat');
+Route::get('profile',[HomeController::class,'getProfile'])->name('profile');
+Route::get('dashboard',[HomeController::class,'dashboard'])->name('dashboard');
+// Route::post('add-gejala', [GejalaController::class, 'store'])->name("add-gejala");
+// Route::get('delete-produk/{id_gejala}', [App\Http\Controllers\GejalaController::class,'destroy'])->name('delete-gejala');
+// Route::put('update-gejala/{id_gejala}',[GejalaController::class,'update'])->name('update-gejala');
 
 
 
@@ -57,7 +66,7 @@ Route::get('diagnosa', [KonsultasiController::class, 'index']);
 Route::post('diagnosa', [KonsultasiController::class, 'hitungKonsultasi']);
 Route::get('diagnosa/{data_diagnosa}', [KonsultasiController::class, 'showdata']);
 Route::get('cetakHasil/{id_hasil}', [KonsultasiController::class, 'cetakHasil']);
-Route::get('logoutt', [LoginController::class, 'logout']);
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 
 //Penyakit

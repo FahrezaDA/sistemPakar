@@ -17,6 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="icon" href="{{asset('img/miniLogo2.png')}}" type="image/x-icon">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap5.css">
 
     <link href="{{ asset('img/favicon.png') }}" rel="icon">
     <link href="{{ asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
@@ -67,12 +69,12 @@
 
  <nav class="navbar navbar-expand-lg navbar-light ">
      <div class="container">
-       <a class="navbar-brand" href="#"><img class="me-3" src="img/Logo3.1.png" alt="" width="40" height="30"> Sistem<span>Pakar</a>
+       <a class="navbar-brand" href="#"><img class="me-3" src="img/Logo3.1.png" alt="" width="40" height="30"> Sistem Pakar</a>
 
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
        </button>
-       <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
          <ul class="navbar-nav mx-auto">
 
             <li class="nav-item mx-2">
@@ -103,7 +105,10 @@
              Selamat Datang, {{Auth::user()->nama}}
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="logoutt">Logout</a>
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                 Logout
+             </a>
               <a class="dropdown-item" href="profile">Profile</a>
             </div>
           </div>
@@ -116,7 +121,9 @@
        </div>
      </div>
    </nav>
-
+   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    @csrf
+</form>
 <div class="container">
 @yield('konten')
 </div>

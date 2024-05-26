@@ -14,7 +14,7 @@ class PenyakitController extends Controller
     {
         $penyakit = Penyakit::all();
         if(auth()->user()->role == 'pengguna') {
-            return view("penyakit.penyakit", compact("penyakit"));
+            return view("user.penyakit.penyakit", compact("penyakit"));
         } elseif(auth()->user()->role == 'admin') {
             return view("dashboard.penyakit.penyakit", compact("penyakit"));
         }
