@@ -49,7 +49,7 @@
     <li class="nav-item">
         <a class="nav-link" href="{{ 'aturan' }}">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Rules</span>
+            <span>Aturan</span>
         </a>
     </li>
     <li class="nav-item">
@@ -63,7 +63,7 @@
         Akun
     </div>
     <li class="nav-item">
-        <a class="nav-link" href="{{ 'profile' }}">
+        <a class="nav-link" href="{{ 'profile-admin' }}">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Profile</span>
         </a>

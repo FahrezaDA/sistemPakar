@@ -5,7 +5,7 @@
 @section('konten')
 <div class="container">
     <h1 id="h1Gejala"> Penyakit Mulut dan Kuku Pada Sapi  </h1>
-    <img src="img/gejala/gejalaPMK.png" alt="" id="gambarGejala">
+    <img src="img/sapi tertular pmk.png" alt="" id="gambarGejala">
 </div>
 <div id="listGejala">
     <ol>

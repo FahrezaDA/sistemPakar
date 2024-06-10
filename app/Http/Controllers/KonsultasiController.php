@@ -9,6 +9,7 @@ use App\Models\Hasil;
 use App\Models\Diagnosa;
 use App\Models\Aturan;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class KonsultasiController extends Controller
 {
@@ -78,6 +79,7 @@ public function cetakHasil($id_hasil)
 
         $arrHasilUser = $request->input('resultGejala');
 
+//pengecekan apakah user sudah memilih 2 gejala apa belum
         if ($arrHasilUser == null) {
             return back()->withInput()->with('error', 'Anda belum memilih gejala');
         } else {
@@ -119,9 +121,11 @@ public function cetakHasil($id_hasil)
                 $hasil = new Hasil();
                 $hasil->nama = $validateReq['nama'];
                 $hasil->alamat = $validateReq['alamat'];
+                $hasil->tanggal = Carbon::now()->toDateString();
                 // $hasil->jenis_sapi = $validateReq['jenis_sapi'];
                 $hasil->hasil_diagnosa = json_encode($variabelTampilan);
                 $hasil->solusi = $variabelTampilan['Solusi_Penyakit']['solusi'];
+
                 $hasil->save();
                 $idHasil = $hasil->id_hasil;
 

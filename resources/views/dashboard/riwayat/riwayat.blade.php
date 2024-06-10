@@ -46,7 +46,8 @@
                                             <th>Alamat</th>
                                             <th>Penyakit</th>
                                             <th>Solusi</th>
-                                            <th>Action</th>
+                                            <th>Tanggal</th>
+
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -60,19 +61,10 @@
                                             <td>{{ $data->alamat }}</td>
                                             <td>{{ $data->nama_penyakit }}</td>
                                             <td>{{ $data->solusi }}</td>
+                                            <td>{{ $data->tanggal }}</td>
 
 
-                                            <td>
-                                                {{-- <a href="#" class="edit-button" data-bs-toggle="modal" data-bs-target="#edit-aturan"
-                                                   data-id_aturan="{{ $data->id_aturan }}" data-kode_penyakit="{{ $data->kode_penyakit }}"
-                                                   data-kode_gejala="{{ $data->kode_gejala }}">
-                                                    <i class="fas fa-edit"></i>
-                                                </a>
-                                                <a href="{{ route('delete-aturan', $data->id_aturan) }}" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">
-                                                    <i class="fas fa-trash-alt" style="color: red"></i>
-                                                </a> --}}
 
-                                            </td>
                                         </tr>
                                     @endforeach
 

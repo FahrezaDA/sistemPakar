@@ -69,7 +69,7 @@
 
  <nav class="navbar navbar-expand-lg navbar-light ">
      <div class="container">
-       <a class="navbar-brand" href="#"><img class="me-3" src="img/Logo3.1.png" alt="" width="40" height="30"> Sistem Pakar</a>
+       <a class="navbar-brand" href="#"><img class="me-3" src="/img/Logo3.1.png" alt="" width="40" height="30"> Sistem Pakar</a>
 
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
@@ -78,7 +78,7 @@
          <ul class="navbar-nav mx-auto">
 
             <li class="nav-item mx-2">
-                <a class="nav-link @if(request()->is('/')) active @endif" href="/">Home</a>
+                <a class="nav-link @if(request()->is('/home')) active @endif" href="/home">Home</a>
             </li>
 
 

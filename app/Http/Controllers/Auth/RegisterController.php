@@ -75,4 +75,7 @@ class RegisterController extends Controller
             'role' => 'pengguna',
         ]);
     }
-}
+
+
+    }
+

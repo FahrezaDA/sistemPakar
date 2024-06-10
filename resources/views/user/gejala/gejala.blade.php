@@ -11,7 +11,7 @@
                     <h3 @style('text-align:center')>Gejala Penyakit Mulut dan Kuku Pada Sapi</h3>
                 </div>
                 <div class="card-body">
-                    <img src="img/gejala/gejalaPMK.png" @style('margin-left:300px') alt="Gejala PMK" class="img-fluid mb-4">
+                    <img src="img/gejala/gejalaPMK.png" @style('margin-left:400px') alt="Gejala PMK" class="img-fluid mb-4">
                     <h2 class="mb-3">Daftar Gejala:</h2>
                     <ol class="list-group list-group-numbered">
                         @foreach ($gejala as $gejalaItem)

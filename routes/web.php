@@ -8,6 +8,7 @@ use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Auth\RegisterController;
 /*
 
 |--------------------------------------------------------------------------
@@ -21,8 +22,11 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', function () {
-    return view('main');
+    return view('auth.login');
 })->name('/');
+Route::get('/home', function () {
+    return view('main');
+})->name('/home');
 
 
 
@@ -54,7 +58,11 @@ Route::put('update-gejala/{id_gejala}',[GejalaController::class,'update'])->name
 //Riwayat
 Route::get('riwayat',[RiwayatController::class,'index'])->name('riwayat');
 Route::get('profile',[HomeController::class,'getProfile'])->name('profile');
+Route::get('profile-admin',[HomeController::class,'getProfileAdmin'])->name('profile-admin');
 Route::get('dashboard',[HomeController::class,'dashboard'])->name('dashboard');
+
+Route::put('update-profile/{id}',[HomeController::class,'updateProfile'])->name('update-profile');
+
 // Route::post('add-gejala', [GejalaController::class, 'store'])->name("add-gejala");
 // Route::get('delete-produk/{id_gejala}', [App\Http\Controllers\GejalaController::class,'destroy'])->name('delete-gejala');
 // Route::put('update-gejala/{id_gejala}',[GejalaController::class,'update'])->name('update-gejala');

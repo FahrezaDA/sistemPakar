@@ -53,7 +53,7 @@ class LoginController extends Controller
         if ($user->role === 'admin') {
             return redirect()->intended('/dashboard');
         } else {
-            return redirect()->intended('/');
+            return redirect()->intended('/home');
         }
     }
 }

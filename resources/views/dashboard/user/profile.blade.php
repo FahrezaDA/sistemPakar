@@ -19,7 +19,9 @@
                                 <h6 class="m-0 font-weight-bold text-primary">Detail Profil</h6>
                             </div>
                             <div class="card-body">
-                                <form>
+                                <form id="updateProfileForm" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    @method('put')
                                     <div class="form-group">
                                         <label for="name">Nama</label>
                                         <input type="text" class="form-control" name="nama" id="name" value="{{ Auth::user()->nama }}" >
@@ -36,8 +38,13 @@
                                         <label for="phone">Telepon</label>
                                         <input type="text" class="form-control" id="no_hp" value="{{ Auth::user()->no_telpon ?? 'Belum diisi' }}">
                                     </div>
-                                    <button type="button" class="btn btn-primary">Update Profil</button>
+                                    <button type="button" id="submitProfileForm" class="btn btn-primary w-100" style="background-color: #8B5A2B; border-color: #8B5A2B; color: #fff;">Update Profil</button>
+
                                 </form>
+                                <div id="alertMessage" style="display:none;" class="alert alert-success">Profile updated successfully.</div>
+
+                                <!-- Back Button -->
+                                <a href="{{'home'}}" class="btn btn-secondary mt-3 w-100" style="background-color: #6F4E37; border-color: #8B5A2B; color: #fff;">Back</a>
                             </div>
                         </div>
                     </div>
@@ -62,6 +69,7 @@
                                                 <th>Alamat</th>
                                                 <th>Penyakit</th>
                                                 <th>Solusi</th>
+                                                <th>Tanggal</th>
                                                 {{-- <th>Action</th> --}}
                                             </tr>
                                         </thead>
@@ -75,7 +83,17 @@
                                                 <td>{{ $item->nama }}</td>
                                                 <td>{{ $item->alamat }}</td>
                                                 <td>{{ $item->nama_penyakit }}</td>
-                                                <td>{{ $item->solusi }}</td>
+                                                <td>
+                                                    @php
+                                                        $solusiArray = json_decode($item->solusi, true);
+                                                    @endphp
+                                                    <ol>
+                                                        @foreach ($solusiArray as $solusi)
+                                                            <li>{{ $solusi }}</li>
+                                                        @endforeach
+                                                    </ol>
+                                                </td>
+                                                <td>{{$item->tanggal}}</td>
                                             </tr>
                                             @endforeach
                                             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -114,6 +132,29 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function(){
+            $('#submitProfileForm').click(function(e){
+                e.preventDefault();
+
+                var formData = new FormData($('#updateProfileForm')[0]);
+
+                $.ajax({
+                    url: '{{ route('update-profile', Auth::user()->id) }}',
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        $('#alertMessage').show().delay(3000).fadeOut();
+                    },
+                    error: function(response) {
+                        alert('There was an error updating the profile. Please try again.');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 @endauth
 

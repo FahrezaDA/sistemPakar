@@ -15,6 +15,7 @@ class Hasil extends Model
         'alamat',
         'jenis_sapi',
         'hasil_diagnosa',
-        'solusi'
+        'solusi',
+        'waktu'
     ];
 }
